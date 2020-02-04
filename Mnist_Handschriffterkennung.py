@@ -1,9 +1,10 @@
 #*************************************************************************************************************#
 #Autor: Martin Bischof                                                                                        #
+#Erstellt am : 04.02.2020                                                                                     #
 #(Kredits: https://www.youtube.com/watch?v=8gZR4Q3262k&list=PLNmsVeXQZj7rx55Mai21reZtd_8m-qe27&index=10)      #
 #Wie installiere ich PyTorch?: www.bischofmartin.de/pytorch.php                                               #
 #Link zu GitHub Repo: https://github.com/MartinBischof/Handschriffterkennung_MNIST                            #
-#Erstellt am : 04.02.2020                                                                                     #
+#Hinweis: Die Datei Mnist_Handschriffterkennung.pyproj ist für die eigentliche Funktion nicht nöttig          #
 #*************************************************************************************************************#
 
 
