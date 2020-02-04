@@ -16,6 +16,7 @@ from torch.autograd import Variable
 from torchvision import datasets, transforms 
 kwargs = {'num_workers': 1, 'pin_memory': True}
 
+#Daten:
 Daten_Training = torch.utils.data.DataLoader(
     datasets.MNIST('data',train=True, download=True, 
                    transform=transforms.Compose([transforms.ToTensor(),transforms.Normalize((0.1370,),(0.3081,))])),
@@ -31,4 +32,34 @@ Daten_Test = torch.utils.data.DataLoader(
     shuffle = True,
     **kwargs
     ) #Ende Daten_Training
+#Das Neuronale Netzwerk (Model):
+class NeuronalesNetwerk (nn.Module):
+    def __init__(self):
+        pass
+    def forward(self,x):
+        pass
 
+Netz = NeuronalesNetwerk()
+Netz = Netz.cuda()
+
+#Optimizer (Berechnet die Error-Funktion):
+optimizer = o.SGD(Netz.parameters(), lr=0.1, momentum=0.8)
+
+#Zusatzfunktionen:
+def train(epoch):
+    model.train()
+    for batch_id, (data,target) in enumerate(Daten_Training):
+        data = data.cuda()
+        target = target.cuda()
+        data = Variable(data)
+        target = Variable(target)
+        optimizer.zero_grad()
+        ergebniss = Netz(data)
+        ErrorFunk = f.nll_loss
+        ErrorValue = ErrorFunk(out,target)
+        ErrorValue.backwards()
+        optimizer.step()
+        #print('')
+
+for epoch in range(1,30):
+    train(epoch)
